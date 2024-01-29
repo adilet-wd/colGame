@@ -1,7 +1,5 @@
 'use client'
 import * as React from 'react';
-import styles from './header.module.scss';
-import { Button, Container, Form, Nav, NavDropdown, NavLink, Navbar, Offcanvas } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import HeaderDesktop from './headerDesktop';
 import HeaderMobile from './headerMobile';

@@ -21,8 +21,8 @@ export default function HeaderDesktop() {
                         <Nav className='mr-auto'>
                             <NavLink >Главная</NavLink>
                             <NavLink>Турнирная таблица</NavLink>
-                            <Button>Зарегистрироваться</Button>
-                            <Button>Войти</Button>
+                            <button className={`${styles.button} nav-link`}>Зарегистрироваться</button>
+                            <button className={`${styles.button} nav-link`}>Войти</button>
                         </Nav>
                     </Container>
                 </Navbar>

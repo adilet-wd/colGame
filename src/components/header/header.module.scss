@@ -11,12 +11,25 @@
     width: 100%;
     height: 56px;
 }
+.logo {
+    
+}
+.logoMobile {
+    order: 2;
+}
+
 .enterButtons {
     display: flex;
+    gap: 6px;
+    order: 3;
+}
+.navbar-toggler {
+    order: 1;
 }
 .button {
     text-align: left;
-    
+    background: none;
+    border: none;
 }
 .nav-placeholder {
     content: '';
