@@ -1,13 +1,8 @@
 @import "../../app/color-variables.scss";
 .header {
     font-family: 'Montserrat', sans-serif;   
+    
 }
-.navbar > .header-container {
-    display: flex;
-    align-items: baseline;
-    justify-content: flex-start;
-}
-
 .logo {
     width: 100px;
 }
@@ -22,7 +17,13 @@
     order: 3;
     color: $colorText;
     margin-left: auto;
+    .button-register {
+        @media (max-width: 440px) {
+            display: none;
+        }
+    }
 }
+
 .navbar-toggler {
     order: 1;
 }
@@ -42,9 +43,6 @@
 }
 .navbar {
     font-size: 16px;
-    .active_page {
-        color: $colorMainActive;
-    }
     &-nav {
         --bs-nav-link-color: $colorMain; 
         color: $colorText;
@@ -66,7 +64,17 @@
         color: $colorText;
         text-decoration: none;
     }
-    .active_link {
-        color: $colorText;
+}
+.nav-link {
+    &.btn:active,
+    &.btn:focus,
+    &.btn:hover {
+      background-color: transparent;
+      color: inherit; 
     }
+}
+.navbar > .header-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
 }

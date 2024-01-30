@@ -10,16 +10,16 @@ export interface Props {
 export default function HeaderMobile() {
   return (
     <>
-            <header className="header">
+            <header className="header header-mobile" >
                 <div className="nav-placeholder"></div>
                 <Navbar fixed="top" collapseOnSelect expand="md" >
                     <Container className="header-container">
                         <Navbar.Brand className={`${styles.logo, styles.logoMobile} `} href="/">
                             ColGame
                         </Navbar.Brand>
-                        <div className={styles.enterButtons}>
-                            <Button className={`${styles.button} nav-link`}>Зарегистрироваться</Button>
-                            <Button className={`${styles.button} nav-link`}>Войти</Button>
+                        <div className="enterButtons">
+                            <Button className={`${styles.button} button-register nav-link`}>Зарегистрироваться</Button>
+                            <Button className={`${styles.button} button-login nav-link`}>Войти</Button>
                         </div>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
                         <Navbar.Offcanvas id={`offcanvasNavbar-expand-md`} aria-labelledby={`offcanvasNavbarLabel-expand-md`} placement="start">

@@ -10,7 +10,7 @@ export interface Props {
 export default function HeaderDesktop() {
   return (
     <>
-            <header className="header">
+            <header className="header header-desktop">
                 <div className="nav-placeholder"></div>
                 <Navbar fixed="top" collapseOnSelect expand="md" >
                     <Container>
