@@ -1,7 +1,8 @@
 'use client'
 import * as React from 'react';
 import styles from './header.module.scss';
-import { Button, Container, Form, Nav, NavDropdown, NavLink, Navbar, Offcanvas } from 'react-bootstrap';
+import { Container, Nav, NavLink, Navbar, } from 'react-bootstrap';
+import Link from 'next/link';
 
 export interface Props {
 }
@@ -9,8 +10,8 @@ export interface Props {
 export default function HeaderDesktop() {
   return (
     <>
-            <div className={styles.headerPlaceholder}></div>
-            <header className={styles.header}>
+            <header className="header">
+                <div className="nav-placeholder"></div>
                 <Navbar fixed="top" collapseOnSelect expand="md" >
                     <Container>
                         {/* Лого */}
@@ -19,8 +20,8 @@ export default function HeaderDesktop() {
                         </Navbar.Brand>
                         
                         <Nav className='mr-auto'>
-                            <NavLink >Главная</NavLink>
-                            <NavLink>Турнирная таблица</NavLink>
+                            <Link href="/" className="nav-link">Главная</Link>
+                            <Link href="/tournaments" className="nav-link">Турниры</Link>
                             <button className={`${styles.button} nav-link`}>Зарегистрироваться</button>
                             <button className={`${styles.button} nav-link`}>Войти</button>
                         </Nav>

@@ -1,8 +1,8 @@
 'use client'
 import * as React from 'react';
 import styles from './header.module.scss';
-import './header.module.scss';
 import { Button, Container,  Nav, NavLink, Navbar, Offcanvas } from 'react-bootstrap';
+import Link from 'next/link';
 
 export interface Props {
 }
@@ -10,11 +10,10 @@ export interface Props {
 export default function HeaderMobile() {
   return (
     <>
-            <div className={styles.headerPlaceholder}></div>
-            <header className={styles.header}>
+            <header className="header">
                 <div className="nav-placeholder"></div>
                 <Navbar fixed="top" collapseOnSelect expand="md" >
-                    <Container className={styles.headerContainer}>
+                    <Container className="header-container">
                         <Navbar.Brand className={`${styles.logo, styles.logoMobile} `} href="/">
                             ColGame
                         </Navbar.Brand>
@@ -31,8 +30,8 @@ export default function HeaderMobile() {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <NavLink >Главная</NavLink>
-                                <NavLink>Турнирная таблица</NavLink>
+                                <Link href="/" className="nav-link">Главная</Link>
+                                <Link href="/tournaments" className="nav-link">Турниры</Link>
                                 <Button className={`${styles.button} nav-link`}>Зарегистрироваться</Button>
                                 <Button className={`${styles.button} nav-link`}>Войти</Button>
                             </Nav>

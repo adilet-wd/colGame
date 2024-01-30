@@ -2,26 +2,26 @@
 .header {
     font-family: 'Montserrat', sans-serif;   
 }
-.headerContainer {
+.navbar > .header-container {
     display: flex;
     align-items: baseline;
     justify-content: flex-start;
 }
-.headerPlaceholder {
-    width: 100%;
-    height: 56px;
-}
+
 .logo {
-    
+    width: 100px;
 }
 .logoMobile {
     order: 2;
+    margin-left: 10px;
 }
 
 .enterButtons {
     display: flex;
-    gap: 6px;
+    gap: 10px;
     order: 3;
+    color: $colorText;
+    margin-left: auto;
 }
 .navbar-toggler {
     order: 1;
@@ -41,7 +41,6 @@
     padding: 0;
 }
 .navbar {
-    background-color: $colorMain;
     font-size: 16px;
     .active_page {
         color: $colorMainActive;
@@ -63,9 +62,9 @@
         color: $colorText;
     } 
     a {
+        text-align: center;
         color: $colorText;
         text-decoration: none;
-        padding: 5px 10px;
     }
     .active_link {
         color: $colorText;

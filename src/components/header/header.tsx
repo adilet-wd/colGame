@@ -8,9 +8,12 @@ export interface Props {
 }
 
 export default function Header() {
-
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+    const [windowWidth, setWindowWidth] = useState(() => {
+        if (typeof window !== 'undefined') {
+          return window.innerWidth;
+        }
+        return 0;
+      });
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
@@ -22,6 +25,7 @@ export default function Header() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
 
     if (windowWidth > 768) {
         return <HeaderDesktop />;
