@@ -3,22 +3,20 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import HeaderDesktop from './headerDesktop';
 import HeaderMobile from './headerMobile';
+import { useRouter } from 'next/router';
 
 export interface Props {
 }
 
+
 export default function Header() {
-    const [windowWidth, setWindowWidth] = useState(() => {
-        if (typeof window !== 'undefined') {
-          return window.innerWidth;
-        }
-        return 0;
-      });
+    const [windowWidth, setWindowWidth] = useState(0);
+
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
         };
-
+        handleResize()
         window.addEventListener('resize', handleResize);
 
         return () => {
@@ -26,10 +24,9 @@ export default function Header() {
         };
     }, []);
 
-
-    if (windowWidth > 768) {
+    if (windowWidth && windowWidth > 768) {
         return <HeaderDesktop />;
-    } else if (windowWidth > 0) {
+    } else if (windowWidth && windowWidth > 0) {
         return <HeaderMobile />;
     }
 }

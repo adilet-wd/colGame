@@ -8,7 +8,9 @@ export interface Props {
 }
 
 export default function HeaderMobile() {
-  return (
+
+
+    return (
     <>
             <header className="header header-mobile" >
                 <div className="nav-placeholder"></div>
@@ -30,10 +32,10 @@ export default function HeaderMobile() {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Link href="/" className="nav-link">Главная</Link>
-                                <Link href="/tournaments" className="nav-link">Турниры</Link>
-                                <Button className={`${styles.button} nav-link`}>Зарегистрироваться</Button>
-                                <Button className={`${styles.button} nav-link`}>Войти</Button>
+                                <Link onClick={closeCanvas} href="/" className="nav-link">Главная</Link>
+                                <Link onClick={closeCanvas} href="/tournaments" className="nav-link">Турниры</Link>
+                                <Button onClick={closeCanvas} className={`${styles.button} nav-link`}>Зарегистрироваться</Button>
+                                <Button onClick={closeCanvas} className={`${styles.button} nav-link`}>Войти</Button>
                             </Nav>
                         </Offcanvas.Body>
                         </Navbar.Offcanvas>
@@ -52,10 +54,14 @@ export default function HeaderMobile() {
 
 
         </>
-  );
+    );
 }
 
 // Helper functions
-function getExclamationMarks(numChars: number) {
-  
+function closeCanvas() {
+    window.scrollTo(0, 0);
+    const navbarToggler = document.querySelector(".navbar-toggler") as HTMLElement;
+    if (navbarToggler && !navbarToggler.classList.contains("collapsed")){
+        navbarToggler.click();
+    }
 }
