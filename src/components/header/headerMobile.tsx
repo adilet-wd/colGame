@@ -20,8 +20,8 @@ export default function HeaderMobile() {
                             ColGame
                         </Navbar.Brand>
                         <div className="enterButtons">
-                            <Button className={`${styles.button} button-register nav-link`}>Зарегистрироваться</Button>
-                            <Button className={`${styles.button} button-login nav-link`}>Войти</Button>
+                            <Link href="/register" className={`${styles.button} button-register nav-link`}>Зарегистрироваться</Link>
+                            <Link href="/login" className={`${styles.button} button-login nav-link`}>Войти</Link>
                         </div>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
                         <Navbar.Offcanvas id={`offcanvasNavbar-expand-md`} aria-labelledby={`offcanvasNavbarLabel-expand-md`} placement="start">
@@ -34,20 +34,11 @@ export default function HeaderMobile() {
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Link onClick={closeCanvas} href="/" className="nav-link">Главная</Link>
                                 <Link onClick={closeCanvas} href="/tournaments" className="nav-link">Турниры</Link>
-                                <Button onClick={closeCanvas} className={`${styles.button} nav-link`}>Зарегистрироваться</Button>
-                                <Button onClick={closeCanvas} className={`${styles.button} nav-link`}>Войти</Button>
+                                <Link onClick={closeCanvas} href="/register" className={`${styles.button} nav-link`}>Зарегистрироваться</Link>
+                                <Link onClick={closeCanvas} href="/login" className={`${styles.button} nav-link`}>Войти</Link>
                             </Nav>
                         </Offcanvas.Body>
                         </Navbar.Offcanvas>
-                        {/* Часть,которая останется в бургере */}
-                        {/* <Navbar.Collapse id='responsive-navbar-nav'>
-                            <Nav className='mr-auto'>
-                                <NavLink >Главная</NavLink>
-                                <NavLink>Турнирная таблица</NavLink>
-                                <Button>Зарегистрироваться</Button>
-                                <Button>Войти</Button>
-                            </Nav>
-                        </Navbar.Collapse> */}
                     </Container>
                 </Navbar>
             </header>

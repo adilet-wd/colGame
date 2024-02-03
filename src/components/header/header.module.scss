@@ -1,4 +1,4 @@
-@import "../../app/color-variables.scss";
+@import "../../styles/color-variables.scss";
 .header {
     font-family: 'Montserrat', sans-serif;   
     
@@ -15,7 +15,7 @@
     display: flex;
     gap: 10px;
     order: 3;
-    color: $colorText;
+    color: $colorTextGray;
     margin-left: auto;
     .button-register {
         @media (max-width: 440px) {
@@ -26,6 +26,9 @@
 
 .navbar-toggler {
     order: 1;
+    transition: none;
+    --bs-navbar-toggler-focus-width: none; 
+    --bs-navbar-toggler-transition: none;
 }
 .button {
     text-align: left;
@@ -45,10 +48,10 @@
     font-size: 16px;
     &-nav {
         --bs-nav-link-color: $colorMain; 
-        color: $colorText;
+        color: $colorTextGray;
     };
     &-brand {
-        color: $colorText;
+        color: $colorTextGray;
         display: flex;
         align-items: center;
     };
@@ -57,11 +60,11 @@
         flex-grow: 0;
     };
     a:hover {
-        color: $colorText;
+        color: $colorTextGray;
     } 
     a {
         text-align: center;
-        color: $colorText;
+        color: $colorTextGray;
         text-decoration: none;
     }
 }
