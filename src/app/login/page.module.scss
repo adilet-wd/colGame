@@ -27,6 +27,20 @@
         background-color: $colorPurple;
         overflow: hidden;
     }
+    &__password {
+        position: relative
+    }
+    &__password-logo {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+
     &-form-wrapper {
         padding: 40px 40px 10px 40px;
         @media (max-width: $media-width-sm) {
